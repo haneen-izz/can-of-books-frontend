@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import IsLoadingAndError from './IsLoadingAndError';
+// import IsLoadingAndError from './IsLoadingAndError';
 import Footer from './Footer';
 import { withAuth0 } from "@auth0/auth0-react";
 import Login from './Login';
@@ -20,7 +20,7 @@ class App extends React.Component {
     return(
       <>
         <Router>
-           <IsLoadingAndError> 
+           {/* <IsLoadingAndError>  */}
             <Header />
             <Switch>
               <Route exact path="/">
@@ -28,14 +28,14 @@ class App extends React.Component {
                
                {isAuthenticated ? <BestBooks/> : <Login/>}
               </Route>
-              <Route exact path = "/Profile">
+              <Route exact path = "/profile">
               {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
               <Profile/>
               </Route>
 
             </Switch>
             <Footer />
-           </IsLoadingAndError> 
+           {/* </IsLoadingAndError>  */}
         </Router>
       </>
     );

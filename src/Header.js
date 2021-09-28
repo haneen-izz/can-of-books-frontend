@@ -7,6 +7,7 @@ import LoginButton from './components/LoginButton'
 import LogoutButton from './components/LogoutButton'
 import { withAuth0 } from "@auth0/auth0-react";
 
+
 class Header extends React.Component {
   render() {
     return(
@@ -22,3 +23,6 @@ class Header extends React.Component {
 }
 
 export default withAuth0(Header);
+
+
+

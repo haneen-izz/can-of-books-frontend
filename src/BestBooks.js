@@ -6,6 +6,7 @@ import { withAuth0 } from "@auth0/auth0-react";
 import Card from "react-bootstrap/Card";
 import "./BestBooks.css";
 import Row from "react-bootstrap/Row";
+import bookModalForm from "./components/bookModalForm.js";
 
 class MyFavoriteBooks extends React.Component {
   constructor(props) {
@@ -26,7 +27,25 @@ class MyFavoriteBooks extends React.Component {
     });
     console.log("books", this.state.bookInfo);
   };
+  addBook = async (e) => {
+    e.preventDefault();
+    // console.log('addBook func');
 
+    let bookModalFun = {
+      title1: e.target.title.value,
+      description1: e.target.description1.value,
+      status1: e.target.status.value,
+      email1: this.props.auth0.user.email,
+    };
+    let createBook = await axios.post(
+      `${process.env.REACT_APP_SERVER}/addBook`,
+      bookModalFun
+    );
+
+    this.setState({
+      books: createBook.data,
+    });
+  };
   render() {
     return (
       <>
@@ -54,6 +73,8 @@ class MyFavoriteBooks extends React.Component {
             </Row>
           );
         })}
+        <br />
+        <bookModalForm addBookFunc={this.addBook} />
       </>
     );
   }

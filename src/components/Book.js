@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BookCard from "./BookCard.js"
 
-class Cat extends Component {
+class Book extends Component {
   render() {
     return (
       <>
@@ -11,11 +11,11 @@ class Cat extends Component {
         description= {this.props.bookInfo.description}
         status = {this.props.bookInfo.status}
         email = {this.props.bookInfo.email}
-       _id = {this.props.bookInfo._id}
+        id = {this.props.bookInfo.id}
         />
       </>
     );
   }
 }
 
-export default Cat;
+export default Book;

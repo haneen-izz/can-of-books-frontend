@@ -5,7 +5,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import { withAuth0 } from "@auth0/auth0-react";
 import "./BestBooks.css";
 import BookForm from "./components/BookForm";
-import BookCard from "./components/BookCard";
+import BookCard from "./components/BookCard.js";
 
 class MyFavoriteBooks extends React.Component {
   constructor(props) {
